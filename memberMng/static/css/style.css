@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+}
+header {
+    background-color: #fff;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e7e7e7;
+}
+nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    margin-right: 0.5rem;
+    border-radius: 5px;
+}
+nav a:hover {
+    background-color: #f2f2f2;
+}
+.container {
+    padding: 1.5rem;
+}
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px; /* 메뉴 간 간격 */
+}
