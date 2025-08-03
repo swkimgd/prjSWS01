@@ -4,4 +4,38 @@
 
 {% block content %}
     <h1>メンバーリスト</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>名前</th>
+                <th>メールアドレス</th>
+                <th>役職</th>
+                <th>チーム</th>
+                <th>年齢</th>
+                <th>勤続年数</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in member_list %}
+              <tr>
+                <td>{{ member.last_name }} {{ member.first_name }}</td>
+                <td>{{ member.email }}</td>
+                <td>{{ member.position.name }}</td>
+                <td>{{ member.group.name }}</td>
+                <td>
+                    {% if member.age is not None %}
+                        {{ member.age }}歳
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+                <td>{{ member.experience_years }}年</td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="6" class="text-center">メンバーがいません。</td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
